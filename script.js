@@ -43,3 +43,17 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealElements.forEach((element) => {
   revealObserver.observe(element);
 });
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("pageLoader");
+
+  if (!loader) return;
+
+  setTimeout(() => {
+    loader.classList.add("hidden");
+  }, 950);
+
+  setTimeout(() => {
+    loader.remove();
+  }, 1800);
+});
